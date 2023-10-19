@@ -59,7 +59,7 @@
                     <p class="fs-4">Laravel, MySQL, jQuery and bootstrap. You need to have a valid api_key and postcode to
                         get
                         Street Address, Latitude and Longitude.</p>
-                    <a class="btn btn-lg btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         API_KEY
                     </a>
 
