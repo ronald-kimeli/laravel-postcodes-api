@@ -4,6 +4,14 @@ import jQuery from 'jquery';
 import { Toast } from 'bootstrap';
 
 jQuery(function () {
+
+    // $('#api_key').on('input', function () {
+    //     var inputValue = $(this).val();
+    //     var maskedValue = '*'.repeat(inputValue.length); // Replace each character with an asterisk
+    //     $(this).val(maskedValue);
+    //     return inputValue;
+    // });
+
     $('#submitButton').on('click', function (e) {
         e.preventDefault();
 
@@ -29,10 +37,10 @@ jQuery(function () {
             $('#table_body').html('');
 
             $('#status').html('');
-            $('#status').append('error');
+            $('#status').append(`<i class="bi bi-exclamation-circle red"></i><span class="ms-1">error`);
 
             $('#toast_body').html('');
-            $('#toast_body').append('<span><strong>Message! </strong>' + 'all fields are required' + '</span>');
+            $('#toast_body').append('all fields are required');
 
         } else if (api_key != '' && postcode === '') {
 
@@ -42,10 +50,10 @@ jQuery(function () {
             $('#table_body').html('');
 
             $('#status').html('');
-            $('#status').append('error');
+            $('#status').append(`<i class="bi bi-exclamation-circle red"></i><span class="ms-1">error`);
 
             $('#toast_body').html('');
-            $('#toast_body').append('<span><strong>Message! </strong>' + 'postcode field is required' + '</span>');
+            $('#toast_body').append('postcode field is required');
 
         } else if (api_key === '' && postcode != '') {
 
@@ -55,10 +63,10 @@ jQuery(function () {
             $('#table_body').html('');
 
             $('#status').html('');
-            $('#status').append('error');
+            $('#status').append(`<i class="bi bi-exclamation-circle red"></i><span class="ms-1">error`);
 
             $('#toast_body').html('');
-            $('#toast_body').append('<span><strong>Message! </strong>' + 'api_key field is required' + '</span>');
+            $('#toast_body').append('api_key field is required');
 
         } else {
             fetchPostcodes();
@@ -77,10 +85,10 @@ jQuery(function () {
                     test.show();
 
                     $('#toast_body').html('');
-                    $('#toast_body').append('<span><strong>Message! </strong>' + response.message + '</span>');
+                    $('#toast_body').append(response.message);
 
                     $('#status').html('');
-                    $('#status').append(response.status);
+                    $('#status').append(`<i class="bi bi-check2-circle green"></i><span class="ms-1">${response.status}`);
 
                     $('#table_head').html('');
                     $('#table_head').append('<tr class="bg-light">\
@@ -113,10 +121,10 @@ jQuery(function () {
                     $('#table_body').html('');
 
                     $('#status').html('');
-                    $('#status').append(status);
+                    $('#status').append(`<i class="bi bi-exclamation-circle red"></i><span class="ms-1">${status}`);
 
                     $('#toast_body').html('');
-                    $('#toast_body').append('<span><strong>Message! </strong>' + errors + '</span>');
+                    $('#toast_body').append(errors);
 
                     //  $('#postcode').val('');
                     //  $('#api_key').val('');

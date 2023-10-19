@@ -39,7 +39,7 @@
                 <strong class="me-auto" id="status">
                     {{-- Status will appear here --}}
                 </strong>
-                <small>just now</small>
+                <small id="status_icon">{{-- Status icon will appear here --}}</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast"
                     aria-label="Close"></button>
             </div>

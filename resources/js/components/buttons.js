@@ -53,10 +53,10 @@ jQuery(function () {
             toast.show();
 
             $('#status').html('');
-            $('#status').append('success');
+            $('#status').append(`<i class="bi bi-check2-circle green"></i><span class="ms-1">success`);
 
             $('#toast_body').html('');
-            $('#toast_body').append('Success! copied 📥\nNow try pasting!');
+            $('#toast_body').append('📥 copied!');
 
             e.clearSelection();
         });
